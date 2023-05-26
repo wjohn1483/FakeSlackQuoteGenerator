@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-DOWNLOAD_FOLDER = "/Users/cwan01/Downloads"
+DOWNLOAD_FOLDER = "PATH_TO_DOWNLOAD_FOLDER"
 DOWNLOAD_FILENAME = "quote.png"
 OUTPUT_FOLDER = "outputs"
 
@@ -64,24 +64,13 @@ def generate_fake_quote(browser: webdriver, name: str, quote: str, profile_pictu
 
 
 def main():
-    # chrome_options = webdriver.ChromeOptions()
-    # chrome_options.add_argument("--headless")
-    # browser = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=chrome_options)
     browser = webdriver.Chrome(ChromeDriverManager().install())
     browser.get(f"file://{os.getcwd()}/index.html")
 
-    my_quote = """剛從學校踏入職場的時候，只懂一點點關於學校課本上面教的東西，對於商業邏輯、數字分析、甚至是SQL怎麼寫都一竅不通，在剛開始工作時接到分析的任務使我一個頭兩個大也感到相當的挫折，那時候是曼如不厭其煩地教導小弟我，才逐漸步上軌道，摸到了曼如決策樹的冰山一角，感謝曼如的諄諄教誨。
-
-除了在專業上，也很感謝曼如在各個團隊和各個專案裡面的各種斡旋，並把自己的正面能量注入給大家，使用屁話或是轉念的力量幫助我們維持士氣的穩定。
-
-曼如即將要前往下一個旅程了，祝福妳在新的地方能繼續發光發熱，但好像也不用特別祝福，因為
-
-我相信曼如
-    """
     data = {
-        "name": ["Chia-Hung Wan", "Tiffany Hsu"],
-        "quote": [my_quote, "qwer"],
-        "profile": ["/Users/cwan01/Downloads/profile picture.png", "/Users/cwan01/Downloads/星際艦長.jpg"],
+        "name": ["Hello", "World"],
+        "quote": ["asdf", "qwer"],
+        "profile": ["./profile picture.png", "./profile picture2.png"],
         "time": [random_time(), random_time()]
     }
     dataframe = pd.DataFrame(data)
