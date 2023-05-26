@@ -1,0 +1,148 @@
+:root {
+    --ff-default: 'Montserrat';
+    --ff-quote: 'Lato';
+    --font-size: 1.2rem;
+    --github-logo-size: 2.0rem;
+
+    --max-width: 770px;
+    --padding: 60px;
+    --margin: 24px;
+
+    --primary-text-color: white;
+    --secondary-text-color: #8D8D8D;
+    --tertiary-color: #717171;
+    --bg-color: #333333;
+}
+
+@media (max-width: 800px) {
+    :root {
+        --padding: 30px;
+    }
+}
+
+h1 {
+    font-size: var(--font-size);
+    font-weight: normal;
+    margin: 0;
+}
+
+body {
+    color: var(--primary-text-color);
+    font-family: var(--ff-default);
+    padding: var(--padding);
+    font-size: var(--font-size);
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--max-width);
+    background-color: var(--bg-color);
+}
+
+header {
+    position: relative;
+}
+
+header p {
+    color: var(--secondary-text-color);
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
+}
+
+.form-field {
+    margin-bottom: var(--margin);
+}
+
+.social-media-meta-element {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: var(--github-logo-size);
+    color: var(--primary-text-color);
+}
+
+.text-in {
+    background: var(--tertiary-color);
+    border: 1.25px solid transparent;
+    border-radius: 5px;
+    font-size: var(--font-size);
+    padding: 5px 15px;
+    color: var(--primary-text-color);
+    width: 100%;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+
+.text-in:hover {
+    border: 1.25px dotted var(--primary-text-color);
+}
+
+.text-in:focus {
+    outline: none;
+    border: 1.25px solid var(--primary-text-color);
+}
+
+.button {
+    background: var(--primary-text-color);
+    border: 1.25px solid transparent;
+    border-radius: 5px;
+    font-size: var(--font-size);
+    padding: 5px 15px;
+    color: var(--bg-color);
+}
+
+.button:hover, .button:focus {
+    outline: none;
+    opacity: 0.8;
+    transition: 0.2s opacity ease-in-out;
+}
+
+.button-submit {
+    width: 100%;
+    margin-bottom: var(--margin);
+}
+
+#previewContainer {
+    margin-bottom: var(--margin);
+    display: inline-block;
+}
+
+#picContainer {
+    flex: 0 0 80px;
+}
+
+#previewPic {
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#quoteContainer {
+    max-width: 400px;
+    font-family: var(--ff-quote);
+    flex: 1;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+
+#previewQuote {
+    font-size: 20px;
+    margin-top: 5px;
+    word-wrap: break-word;
+}
+
+#previewName {
+    font-size: 22px;
+    font-weight: 900;
+}
+
+#previewStatus {
+    height: 16px;
+    width: 16px;
+}
+
+#time {
+    margin-left: 5px;
+    font-size: 16px;
+    color: grey;
+}

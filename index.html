@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./js/functions.js"></script>
+    <script src="./js/html2canvas.min.js"></script>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" type="text/css" href="./main.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-icon-152x152.png">
+    <meta name="theme-color" content="#333333"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Fake Slack Quote Generator">
+    <meta name="msapplication-TileImage" content="./images/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#333333">
+    <meta name="Description" content="An app for creating fake slack quotes to trick your friends.">
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Generate Fake Slack Quotes to Trick Your Friends!</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Fake Slack Quote Generator</h1>
+        <a class="social-media-meta-element" href="https://github.com/HoldenA1/FakeSlackQuoteGenerator">
+            <i class="fa fa-github" aria-hidden="true"></i>
+        </a>
+        <p>This is a simple website that allows you to create realistic looking screenshots of slack that are totally fake. This product should solely be used for fun. Don't do something that could get you or me sued.</p>
+    </header>
+
+    <form name="myForm">
+        <div class="form-field">
+            <label for="formName">Slack name</label>
+            <br>
+            <input type="text" class="text-in" id="name" name="name">
+        </div>
+        <div class="form-field">
+            <label for="formQuote">Quote</label>
+            <br>
+            <textarea rows="5" class="text-in" id="quote" name="quote"></textarea>
+        </div>
+        <div class="form-field">
+            <label for="formTime">Time</label>
+            <br>
+            <input type="text" class="text-in" id="slackTime" name="slackTime">
+        </div>
+        <div class="form-field">
+            <label for="bgcolor">Select your slack background color</label>
+            <input type="color" class="button" id="bgcolor" name="bgcolor" value="#ffffff">
+        </div>
+        <div class="form-field">
+            <label for="txtcolor">Select your slack text color</label>
+            <input type="color" class="button" id="txtcolor" name="txtcolor" value="#000000">
+        </div>
+        <div class="form-field">
+            <label for="profilePic">Select profile picture</label>
+            <input type="file" id="profilePic" name="profilePic" accept="image/*">
+        </div>
+        <div class="form-field">
+            <label for="status">Select slack status</label>
+            <input type="file" id="status" name="status" accept="image/*">
+        </div>
+        <input type="button" class="button button-submit" value="Submit" onclick="createPreview()" />
+    </form>
+
+    <div id="outputContainer" style="visibility: hidden;">
+        <h1 id="previewTitle">Preview</h1>
+        <div id="previewContainer">
+            <div style="display: flex;">
+                <div id="picContainer">
+                    <img id="previewPic">
+                </div>
+                <div id="quoteContainer">
+                    <div id="heading">
+                        <span id="previewName"></span>
+                        <span id="time"></span>
+                    </div>
+                    <p id="previewQuote"></p>
+                </div>
+            </div>
+        </div><br>
+        <button class="button button-submit" onclick="download()">Download</button>
+    </div>
+</body>
+
+<!-- Load the service worker -->
+<script src="./js/main.js"></script>
+
+</html>
